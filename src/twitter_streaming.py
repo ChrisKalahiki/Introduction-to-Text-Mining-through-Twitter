@@ -10,7 +10,7 @@ consumer_key = "Enter your api key"
 consumer_secret = "Enter your api secret"
 
 #Basic listener that prints received tweets to stdout
-class StdListener (StreamListener):
+class StdOutListener (StreamListener):
     def on_data (self, data):
         print (data)
         return True
@@ -23,6 +23,6 @@ if __name__ == '__main__':
     l = StdOutListener()
     auth = OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_token, access_token_secret)
-    stream = Stream(auth, 1)
+    stream = Stream(auth, l)
 
     stream.filter(track = ['python', 'javascript', 'ruby'])
