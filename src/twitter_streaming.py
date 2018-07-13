@@ -5,7 +5,7 @@ from tweepy import Stream
 import configparser
 
 config = configparser.ConfigParser()
-config.read('configparser.ini')
+config.read('config.ini')
 
 #Variables
 access_token = config['DEFAULT']['access_token']

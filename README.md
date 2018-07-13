@@ -7,7 +7,10 @@ An introductory text mining experiment using the Twitter API
 - Fill out the form, agree to the terms, and click "Create your Twitter application"
 - Click on "API keys" tab, and copy your "API key" and "API key secret"
 - Scroll down, click "Create my access token", and copy your "Access token" and "Access token secret"
-These will need to go in twitter_streaming.py. There is a variables section at the top of the program.
+
+# Create your config file
+- Run the command `cp ./src/config-default.ini ./src/config.ini`
+- You will need to input your API Keys into `config.ini`
 
 # Running the Experiment
 The first part of the experiment involves collecting data. To do this, we will need to run the following line in your terminal:
