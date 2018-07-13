@@ -2,12 +2,16 @@
 from tweepy.streaming import StreamListener
 from tweepy import OAuthHandler
 from tweepy import Stream
+import configparser
+
+config = configparser.ConfigParser()
+config.read('configparser.ini')
 
 #Variables
-access_token = "Enter your access token"
-access_token_secret = "Enter your access token secret"
-consumer_key = "Enter your api key"
-consumer_secret = "Enter your api secret"
+access_token = config['DEFAULT']['access_token']
+access_token_secret = config['DEFAULT']['access_token_secret']
+consumer_key = config['DEFAULT']['consumer_key']
+consumer_secret = config['DEFAULT']['consumer_secret']
 
 #Basic listener that prints received tweets to stdout
 class StdOutListener (StreamListener):
