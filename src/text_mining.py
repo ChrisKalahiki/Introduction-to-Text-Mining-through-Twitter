@@ -40,17 +40,17 @@ print (tweets['javascript'].values_counts()[True])
 print (tweets['ruby'].values_counts()[True])
 
 #Print relevent tweet count
-print tweets['programming'].value_counts()[True]
-print tweets['tutorial'].value_counts()[True]
-print tweets['relevant'].value_counts()[True]
-print tweets[tweets['relevant'] == True]['python'].value_counts()[True]
-print tweets[tweets['relevant'] == True]['javascript'].value_counts()[True]
-print tweets[tweets['relevant'] == True]['ruby'].value_counts()[True]
+print (tweets['programming'].value_counts()[True])
+print (tweets['tutorial'].value_counts()[True])
+print (tweets['relevant'].value_counts()[True])
+print (tweets[tweets['relevant'] == True]['python'].value_counts()[True])
+print (tweets[tweets['relevant'] == True]['javascript'].value_counts()[True])
+print (tweets[tweets['relevant'] == True]['ruby'].value_counts()[True])
 
 #Print links found
-print tweets_relevant_with_link[tweets_relevant_with_link['python'] == True]['link']
-print tweets_relevant_with_link[tweets_relevant_with_link['javascript'] == True]['link']
-print tweets_relevant_with_link[tweets_relevant_with_link['ruby'] == True]['link']
+print (tweets_relevant_with_link[tweets_relevant_with_link['python'] == True]['link'])
+print (tweets_relevant_with_link[tweets_relevant_with_link['javascript'] == True]['link'])
+print (tweets_relevant_with_link[tweets_relevant_with_link['ruby'] == True]['link'])
 
 #Graphics
 #By Language
@@ -87,8 +87,8 @@ ax.set_xticklabels(prg_langs)
 plt.grid()
 
 tweets_by_prg_lang = [tweets[tweets['relevant'] == True]['python'].value_counts()[True],
-                      tweets[tweets['relevant'] == True]['javascript'].value_counts()[True],
-                      tweets[tweets['relevant'] == True]['ruby'].value_counts()[True]]
+                        tweets[tweets['relevant'] == True]['javascript'].value_counts()[True],
+                        tweets[tweets['relevant'] == True]['ruby'].value_counts()[True]]
 x_pos = list(range(len(prg_langs)))
 width = 0.8
 fig, ax = plt.subplots()
