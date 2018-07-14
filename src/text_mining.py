@@ -9,7 +9,7 @@ tweets_data_path = 'twitter_data.txt'
 
 tweets_data = []
 tweets_file = open(tweets_data_path, "r")
-for line in tweets_file:
+for line in tweets_file.read():
     try:
         tweet = json.loads(line)
         tweets_data.append(tweet)
@@ -40,17 +40,17 @@ print (tweets['javascript'].values_counts()[True])
 print (tweets['ruby'].values_counts()[True])
 
 #Print relevent tweet count
-print tweets['programming'].value_counts()[True]
-print tweets['tutorial'].value_counts()[True]
-print tweets['relevant'].value_counts()[True]
-print tweets[tweets['relevant'] == True]['python'].value_counts()[True]
-print tweets[tweets['relevant'] == True]['javascript'].value_counts()[True]
-print tweets[tweets['relevant'] == True]['ruby'].value_counts()[True]
+print (tweets['programming'].value_counts()[True])
+print (tweets['tutorial'].value_counts()[True])
+print (tweets['relevant'].value_counts()[True])
+print (tweets[tweets['relevant'] == True]['python'].value_counts()[True])
+print (tweets[tweets['relevant'] == True]['javascript'].value_counts()[True])
+print (tweets[tweets['relevant'] == True]['ruby'].value_counts()[True])
 
 #Print links found
-print tweets_relevant_with_link[tweets_relevant_with_link['python'] == True]['link']
-print tweets_relevant_with_link[tweets_relevant_with_link['javascript'] == True]['link']
-print tweets_relevant_with_link[tweets_relevant_with_link['ruby'] == True]['link']
+print (tweets_relevant_with_link[tweets_relevant_with_link['python'] == True]['link'])
+print (tweets_relevant_with_link[tweets_relevant_with_link['javascript'] == True]['link'])
+print (tweets_relevant_with_link[tweets_relevant_with_link['ruby'] == True]['link'])
 
 #Graphics
 #By Language
